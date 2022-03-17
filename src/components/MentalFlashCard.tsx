@@ -1,4 +1,6 @@
 import React from "react";
+import ListOfQuestions from "../data/ListOfQuestions.json"
+
 
 type MentalFlashCardProps= {
     question: string;
@@ -10,16 +12,11 @@ const MentalFlashCard: React.FC<MentalFlashCardProps> = ({question, answer}) => 
 
     return (
         <>
-        <h1>MentalFlashCard</h1>
-        <div>
-            className={
-                
-            }
-        </div>
-        
-        
-        
-        
+            <h1>MentalFlashCard</h1>
+            <div
+             className="mental-flashcard" onClick= {() => setShowAnswer (!showAnswer)}>
+            {showAnswer ? answer + "✅" : question}
+            </div>
         </>
     )
 };
