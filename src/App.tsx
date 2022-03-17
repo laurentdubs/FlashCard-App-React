@@ -1,24 +1,18 @@
 import React from 'react';
 import './App.css';
-import MentalFlashCard
+import MentalFlashCard from "./components/MentalFlashCard/MentalFlashCard";
+import ListOfQuestions from "../src/components/ListOfQuestions";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {ListOfQuestions.map((question) => (
+      <MentalFlashCard 
+      key= {question.question}
+      question = {question.question}
+      answer = {question.answer}
+      />
+    ))}
     </div>
   );
 }
