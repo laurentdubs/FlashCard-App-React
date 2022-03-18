@@ -13,8 +13,11 @@ const MentalFlashCard: React.FC<MentalFlashCardProps> = ({question, answer}) => 
     return (
         <>
             <h1>MentalFlashCard</h1>
+            
             <div
-             className="mental-flashcard" onClick= {() => setShowAnswer (!showAnswer)}>
+             className= 
+                 "mental-flashcard" onClick= {() => setShowAnswer (!showAnswer)}
+             >
             {showAnswer ? answer + "✅" : question}
             </div>
         </>

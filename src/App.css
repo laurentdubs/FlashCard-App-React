@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,24 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.mental-flashcard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(70, 64, 64, 0.692);
+  color: white;
+  height: 30vh;
+  font-size: 25px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.bg-success {
+  background-color: seagreen;
+}
+
+.bg-neutra {
+  background-color: grey;
 }
