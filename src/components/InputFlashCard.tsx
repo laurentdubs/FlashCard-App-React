@@ -1,12 +1,12 @@
 import React from "react";
 import "../InputFlashCard.css";
 
-type MentalFlashCardProps= {
+type InputFlashCardProps= {
     question: string;
     answer: string;
 }
 
-const InputFlashCard: React.FC<MentalFlashCardProps> = ({
+const InputFlashCard: React.FC<InputFlashCardProps> = ({
     question,
     answer,
 }) => {
@@ -18,11 +18,17 @@ const InputFlashCard: React.FC<MentalFlashCardProps> = ({
         <div className= "flashcard">
             <h1>InputFlashCard</h1>
             {showAnswer ? (
-                <div>
-                    {userAnswer === answer ? "✅" : "❌"}
+                <div
+                    className= {userAnswer === answer ? "bg-success" : "bg-error"}
+                    onClick= {() => {
+                    setShowAnswer(!showAnswer);
+                    setUserAnswer("");
+                    }}
+                    >
+                    <div>{userAnswer === answer ? "✅" : "❌"}</div>
                 </div>
             ) : null}
-            <div>{showAnswer ? "The answer is :" + answer : question}</div>     
+            <div>{showAnswer ? "The answer is :" + answer : question}</div> 
                     <input type="text" 
                     onChange={(event) => {
                         setUserAnswer(event.target.value);
